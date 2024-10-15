@@ -1,0 +1,15 @@
+{
+  "name": "phase-5",
+  "private": true,
+  "scripts": {
+    "dev": "wattpm dev",
+    "build": "wattpm build",
+    "start": "wattpm start"
+  },
+  "dependencies": {
+    "wattpm": "^2.5.5"
+  },
+  "workspaces": [
+    "web/*"
+  ]
+}

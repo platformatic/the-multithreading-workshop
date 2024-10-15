@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "benchmark": "node ./benchmark.mjs",
+    "exercises:phase-1": "node exercises/phase-1/index.mjs",
+    "exercises:phase-2": "node exercises/phase-2/index.mjs",
+    "exercises:phase-3": "node exercises/phase-3/index.mjs",
+    "exercises:phase-4": "node exercises/phase-4/index.mjs",
+    "exercises:phase-5": "cd exercises/phase-5 && wattpm start",
+    "solutions:phase-1": "node solutions/phase-1/index.mjs",
+    "solutions:phase-2": "node solutions/phase-2/index.mjs",
+    "solutions:phase-3": "node solutions/phase-3/index.mjs",
+    "solutions:phase-4": "node solutions/phase-4/index.mjs",
+    "solutions:phase-5": "cd solutions/phase-5 && wattpm start"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0"
+  }
+}
