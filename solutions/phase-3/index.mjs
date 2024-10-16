@@ -22,9 +22,9 @@ async function startWorker() {
     createHash('sha256').update(bytes).digest().copy(buffer)
 
     // Notify the parent thread
-    const int32 = new Int32Array(message.sharedArrayBuffer)
-    int32[0] = 1
-    Atomics.notify(int32, 0)
+    const int32Array = new Int32Array(message.sharedArrayBuffer)
+    int32Array[0] = 1
+    Atomics.notify(int32Array, 0)
   })
 }
 
@@ -33,7 +33,7 @@ function startServer() {
 
   let nextWorker = 0
   const workers = []
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     workers.push(new Worker(import.meta.filename))
   }
 
@@ -48,11 +48,11 @@ function startServer() {
       Since Atomics worked with Int32, this means we need 4 bytes.
     */
     const sharedArrayBuffer = new SharedArrayBuffer(SHA256_BYTE_LENGTH + 4)
-    const int32 = new Int32Array(sharedArrayBuffer)
+    const int32Array = new Int32Array(sharedArrayBuffer)
 
     const currentWorker = nextWorker++ % workers.length
     workers[currentWorker].postMessage({ type: 'request', sharedArrayBuffer })
-    await Atomics.waitAsync(int32, 0, 0).value
+    await Atomics.waitAsync(int32Array, 0, 0).value
 
     return {
       hash: Buffer.from(sharedArrayBuffer, 4).toString('hex')
@@ -60,7 +60,7 @@ function startServer() {
   })
 
   app.listen({ port: 3000 }, () => {
-    console.info(`The server is listening at http://127.0.0.1:${app.server.address().port} ...`)
+    console.log(`The server is listening at http://127.0.0.1:${app.server.address().port} ...`)
   })
 }
 

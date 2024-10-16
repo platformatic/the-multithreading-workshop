@@ -6,7 +6,7 @@ export function create() {
     loggerInstance: globalThis.platformatic?.logger?.child({}, { level: globalThis.platformatic?.logLevel ?? 'info' })
   })
 
-  app.get('/hash', async () => {
+  app.get('/', async () => {
     const bytes = randomBytes(1e9)
     const hash = createHash('sha256').update(bytes).digest('hex')
 

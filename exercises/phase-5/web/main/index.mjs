@@ -6,11 +6,15 @@ export function create() {
   })
 
   app.get('/fast', async () => {
-    // TODO: Your code here
+    return { time: Date.now() }
   })
 
   app.get('/slow', async () => {
-    // TODO: Your code here
+    /*
+      TODO: Compute the hash in the worker service.
+      
+      In order to invoke it use can use fetch pointing to the http://worker.plt.local domain.
+    */
   })
 
   return app
