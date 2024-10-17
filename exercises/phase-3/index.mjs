@@ -61,9 +61,6 @@ function startServer() {
       2. Wait for the first element to be non zero.
     */
 
-    const int32Array = new Int32Array(sharedArrayBuffer)
-    await Atomics.waitAsync(int32Array, 0, 0).value
-
     // TODO: Create a buffer backed by sharedArrayBuffer to extract the result. Remember to use the right offset.
 
     return {
