@@ -3,6 +3,6 @@
   "type": "module",
   "main": "index.mjs",
   "dependencies": {
-    "@platformatic/node": "^2.5.5"
+    "@platformatic/node": "^2.8.0"
   }
 }

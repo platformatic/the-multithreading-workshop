@@ -1,4 +1,4 @@
 {
-  "$schema": "https://schemas.platformatic.dev/@platformatic/composer/2.5.5.json",
+  "$schema": "https://schemas.platformatic.dev/@platformatic/composer/2.8.0.json",
   "composer": {}
 }

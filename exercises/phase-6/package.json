@@ -7,7 +7,7 @@
     "start": "wattpm start"
   },
   "dependencies": {
-    "wattpm": "^2.5.5"
+    "wattpm": "^2.8.0"
   },
   "workspaces": [
     "web/*"
