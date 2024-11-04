@@ -2,6 +2,9 @@ import autocannon from 'autocannon'
 
 let requestIndex = 0
 
+await fetch('http://127.0.0.1:3000/slow')
+await fetch('http://127.0.0.1:3000/fast')
+
 const result = await autocannon({
   url: `http://127.0.0.1:3000`,
   connections: 10,
